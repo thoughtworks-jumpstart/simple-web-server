@@ -2,10 +2,15 @@
 
 In this lab exercise we work together to build a simple web service.
 
-## Structure your app
+## Structure your routes
 
-Structuring our app helps make it more organized so we can add new features to it more easily.
+Create a `routes` folder and in it create an `index.js` file.
 
-Let's move the Express app to its own `app.js` file and import it back into `index.js`.
+Move your `app.get()` into `routes/index.js` and replace the `app` to `router`.
 
-Make sure to test that your app still works before committing your changes.
+Then, import your index routes into `app.js` like so,
+
+```
+const index = require("./routes/index");
+app.use("/", index);
+```
